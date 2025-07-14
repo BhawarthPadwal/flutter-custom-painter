@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_painter/shapes/oval_painter.dart';
 import 'package:flutter_custom_painter/shapes/rectangle_painter.dart';
+import 'package:flutter_custom_painter/shapes/rounded_rectangle_painter.dart';
 
 class Screen1 extends StatelessWidget {
   const Screen1({super.key});
@@ -18,15 +20,12 @@ class Screen1 extends StatelessWidget {
       body: Center(
         child: Container(
           color: Colors.grey.shade300,
-          child: CustomPaint(painter: RectanglePainter(), size: Size(300, 400)),
+          child: CustomPaint(
+            painter: RoundedRectanglePainter(),
+            size: Size(300, 400),
+          ),
         ),
       ),
     );
   }
 }
-
-
-
-
-
-
