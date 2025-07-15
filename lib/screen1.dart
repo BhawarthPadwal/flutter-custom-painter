@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_painter/shapes/colors_painters.dart';
+import 'package:flutter_custom_painter/shapes/conicto_relativeconicto.dart';
 import 'package:flutter_custom_painter/shapes/differenceof_rect.dart';
+import 'package:flutter_custom_painter/shapes/heart_painter.dart';
+import 'package:flutter_custom_painter/shapes/move_to_line_to.dart';
 import 'package:flutter_custom_painter/shapes/oval_painter.dart';
 import 'package:flutter_custom_painter/shapes/path_painter.dart';
 import 'package:flutter_custom_painter/shapes/points_painter.dart';
@@ -15,10 +18,11 @@ class Screen1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: SizedBox(
+        child: Container(
           width: 300,
           height: 300,
-          child: CustomPaint(painter: TriangularShapePainter()),
+          color: Colors.grey.shade300,
+          child: CustomPaint(painter: HeartPainter()),
         ),
       ),
     );
