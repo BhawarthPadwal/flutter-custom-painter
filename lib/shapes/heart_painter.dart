@@ -61,28 +61,28 @@ class HeartPainter extends CustomPainter {
     path.moveTo(10, size.height / 2);
     path.cubicTo(
       40,
-      size.height * 0.8,
+      size.height * 0.75,
       size.width / 2,
-      size.height * 0.8,
+      size.height,
       size.width / 2,
       size.height,
     );
     path.cubicTo(
       size.width / 2,
-      size.height * 0.8,
+      size.height,
       size.width - 40,
-      size.height * 0.8,
+      size.height * 0.75,
       size.width - 10,
       size.height / 2,
     );
     path.arcToPoint(
-      Offset((size.width / 2), size.height * 0.35),
-      radius: Radius.circular(10),
+      Offset((size.width / 2), size.height * 0.25),
+      radius: Radius.elliptical(10, 11),
       clockwise: false,
     );
     path.arcToPoint(
       Offset(10, size.height / 2),
-      radius: Radius.circular(10),
+      radius: Radius.elliptical(10, 11),
       clockwise: false,
     );
 

@@ -19,8 +19,8 @@ class Screen1 extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Container(
-          width: 300,
-          height: 300,
+          width: 250,
+          height: 250,
           color: Colors.grey.shade300,
           child: CustomPaint(painter: HeartPainter()),
         ),
