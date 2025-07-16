@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 
 class HeartPainter extends CustomPainter {
+  final double animationValue;
+
+  HeartPainter({required this.animationValue});
+
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint =
         Paint()
           ..strokeWidth = 2
-          ..color = Colors.red
-          ..style = PaintingStyle.fill;
+          ..color = Colors.black
+          ..style = PaintingStyle.stroke;
 
     final List<Offset> points = <Offset>[
       Offset(size.width, size.height / 2),
@@ -86,9 +90,19 @@ class HeartPainter extends CustomPainter {
       clockwise: false,
     );
 
-    canvas.drawPath(path, paint);
+    // Animate using PathMetric
+    final pathMetrics = path.computeMetrics();
+    final animatedPath = Path();
+
+    for (final metric in pathMetrics) {
+      final length = metric.length * animationValue;
+      animatedPath.addPath(metric.extractPath(0, length), Offset.zero);
+    }
+
+    canvas.drawPath(animatedPath, paint);
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+  bool shouldRepaint(covariant HeartPainter oldDelegate) =>
+      oldDelegate.animationValue != animationValue;
 }
